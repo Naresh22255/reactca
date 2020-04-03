@@ -1,20 +1,30 @@
 import React from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Button } from "react-bootstrap";
 
 import { Home } from "./components/Home";
 import { Contact } from "./components/Contact";
+import { Navigation } from "./components/Navigation";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react-bootstrap";
+
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 function App() {
   return (
-    <div className="App container">
-      <Home />
-      <Contact />
-      <h1>Hello React!</h1>
-      <Button variant="primary">Primary</Button>{" "}
-      <Button variant="outline-warning">Warning</Button>{" "}
-    </div>
+    <BrowserRouter>
+      <div className="App container">
+        {/* <Home /> */}
+        {/* <Contact /> */}
+        <h1>Welcome!</h1>
+        <Navigation />
+        <Button variant="primary">Primary</Button>{" "}
+        <Button variant="outline-warning">Warning</Button>{" "}
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/contact" component={Contact} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
