@@ -39,7 +39,9 @@ class GameeeAPI extends Component {
             {customer.map((customers) => (
               <tr>
                 <td>{customers.name}</td>
-                <td>{customers.background_image} </td>
+                <td>
+                  <img src={customers.background_image} alt="imagee" />
+                </td>
                 <td>{customers.rating} </td>
                 <td>{customers.released} </td>
               </tr>
