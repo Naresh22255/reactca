@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Form, Row, Col } from "react-bootstrap";
 
 // export class Contact extends Component {
 //   render() {
@@ -24,61 +25,26 @@ class Contact extends Component {
 
   render() {
     return (
-      <div className="App">
-        <form
-          id="contact-form"
-          onSubmit={this.handleSubmit.bind(this)}
-          method="POST"
-        >
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.name}
-              onChange={this.onNameChange.bind(this)}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              aria-describedby="emailHelp"
-              value={this.state.email}
-              onChange={this.onEmailChange.bind(this)}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea
-              className="form-control"
-              rows="5"
-              value={this.state.message}
-              onChange={this.onMessageChange.bind(this)}
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>{" "}
-        </form>
-      </div>
+      <Form>
+        <Row>
+          <Col>
+            <Form.Control placeholder="First name" />
+          </Col>
+          <Col>
+            <Form.Control placeholder="Last name" />
+          </Col>
+        </Row>
+        <Form.Group controlId="formGroupEmail">
+          <Form.Label></Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+        </Form.Group>
+        <Form.Group controlId="exampleForm.ControlTextarea1">
+          <Form.Label></Form.Label>
+          <Form.Control as="textarea" rows="3" placeholder="Text Area" />
+        </Form.Group>
+      </Form>
     );
   }
-
-  onNameChange(event) {
-    this.setState({ name: event.target.value });
-  }
-
-  onEmailChange(event) {
-    this.setState({ email: event.target.value });
-  }
-
-  onMessageChange(event) {
-    this.setState({ message: event.target.value });
-  }
-
-  handleSubmit(event) {}
 }
 
 export default Contact;

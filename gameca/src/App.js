@@ -6,7 +6,7 @@ import Contact from "./components/Contact";
 import Navigation from "./components/Navigation";
 // import Game from "./components/Game";
 import FetchAPI from "./components/FetchAPI";
-import GameAPI from "./components/GameAPI";
+import Gameee from "./components/Gameee";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -27,7 +27,7 @@ class App extends Component {
             {/* <Home name="Naresh" />
           <Contact /> */}
           </Switch>
-          <GameAPI />
+          <Gameee />
         </div>
       </BrowserRouter>
     );
