@@ -1,12 +1,15 @@
 // import React from "./node_modules/react";
 
 import React, { Component } from "react";
-
+import { Table, Cards } from "react-bootstrap";
 export class Home extends Component {
+  // constructor(props) {
+  //   super(props);
+  // }
   render() {
     return (
       <div className="mt-5 d-flex justify-content-left">
-        <h3>This is Home page</h3>
+        <h3>This is Home page (Results in Console Log)</h3>
       </div>
     );
   }
