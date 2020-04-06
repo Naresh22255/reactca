@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Row, Col } from "react-bootstrap";
+import { Button, Form, Row, Col } from "react-bootstrap";
 
 // export class Contact extends Component {
 //   render() {
@@ -28,20 +28,26 @@ class Contact extends Component {
       <Form>
         <Row>
           <Col>
-            <Form.Control placeholder="First name" />
+            <Form.Control placeholder="First name" required />
           </Col>
           <Col>
-            <Form.Control placeholder="Last name" />
+            <Form.Control placeholder="Last name" required />
           </Col>
         </Row>
         <Form.Group controlId="formGroupEmail">
           <Form.Label></Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control type="email" placeholder="Enter email" required />
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label></Form.Label>
-          <Form.Control as="textarea" rows="3" placeholder="Text Area" />
+          <Form.Control
+            as="textarea"
+            rows="3"
+            placeholder="Text Area"
+            required
+          />
         </Form.Group>
+        <Button variant="secondary">Submit</Button>
       </Form>
     );
   }

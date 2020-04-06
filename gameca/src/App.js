@@ -18,8 +18,8 @@ class App extends Component {
           <h1>Hello Welcome!</h1>
           {/* <FetchAPI /> */}
           {/* <Game /> */}
-          <Button variant="primary">Primary</Button>{" "}
-          <Button variant="secondary">Secondary</Button>
+          {/* <Button variant="primary">Primary</Button>{" "}
+          <Button variant="secondary">Secondary</Button> */}
           <Navigation />
           <Switch>
             <Route path="/" component={Home} exact />

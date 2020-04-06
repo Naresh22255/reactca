@@ -13,8 +13,8 @@ class GameeeAPI extends Component {
     fetch("https://api.rawg.io/api/games")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ customer: data });
-        console.log(data);
+        this.setState({ customer: data.results });
+        console.log(data.results);
       });
   }
 
@@ -25,7 +25,7 @@ class GameeeAPI extends Component {
   render() {
     const { customer } = this.state;
     return (
-      <React.Fragment>
+      <div>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
@@ -38,17 +38,25 @@ class GameeeAPI extends Component {
           <tbody>
             {customer.map((customers) => (
               <tr>
-                <td>{customers.results.name}</td>
-                <td>{customers.results.background_image} </td>
-                <td>{customers.results.rating} </td>
-                <td>{customers.results.reseased} </td>
+                <td>{customers.name}</td>
+                <td>{customers.background_image} </td>
+                <td>{customers.rating} </td>
+                <td>{customers.released} </td>
               </tr>
             ))}
           </tbody>
         </Table>
-      </React.Fragment>
+        {/* <Button variant="secondary" onClick={this.moreInfo()}>
+          More Info
+        </Button>  */}
+      </div>
     );
   }
 }
+
+// function moreInfo()=> {
+//     return console.log('More Info');
+
+// }
 
 export default GameeeAPI;
